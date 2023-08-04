@@ -1,0 +1,449 @@
+[
+  {
+    "namespace": "com.aliyun.dts.deliver.protocol.avro.generated",
+    "name": "Field",
+    "type": "record",
+    "fields": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "dataTypeNumber",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "namespace": "com.aliyun.dts.deliver.protocol.avro.generated",
+    "type": "record",
+    "name": "Integer",
+    "fields": [
+      {
+        "name": "precision",
+        "type": "int"
+      },
+      {
+        "name": "value",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "namespace": "com.aliyun.dts.deliver.protocol.avro.generated",
+    "type": "record",
+    "name": "Character",
+    "fields": [
+      {
+        "name": "charset",
+        "type": "string"
+      },
+      {
+        "name": "value",
+        "type": "bytes"
+      }
+    ]
+  },
+  {
+    "namespace": "com.aliyun.dts.deliver.protocol.avro.generated",
+    "type": "record",
+    "name": "Float",
+    "fields": [
+      {
+        "name": "value",
+        "type": "double"
+      },
+      {
+        "name": "precision",
+        "type": "int"
+      },
+      {
+        "name": "scale",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "namespace": "com.aliyun.dts.deliver.protocol.avro.generated",
+    "type": "record",
+    "name": "Decimal",
+    "fields": [
+      {
+        "name": "value",
+        "type": "string"
+      },
+      {
+        "name": "precision",
+        "type": "int"
+      },
+      {
+        "name": "scale",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "namespace": "com.aliyun.dts.deliver.protocol.avro.generated",
+    "type": "record",
+    "name": "Timestamp",
+    "fields": [
+      {
+        "name": "timestamp",
+        "type": "long"
+      },
+      {
+        "name": "millis",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "namespace": "com.aliyun.dts.deliver.protocol.avro.generated",
+    "type": "record",
+    "name": "DateTime",
+    "fields": [
+      {
+        "name": "year",
+        "default": null,
+        "type": [
+          "null",
+          "int"
+        ]
+      },
+      {
+        "name": "month",
+        "default": null,
+        "type": [
+          "null",
+          "int"
+        ]
+      },
+      {
+        "name": "day",
+        "default": null,
+        "type": [
+          "null",
+          "int"
+        ]
+      },
+      {
+        "name": "hour",
+        "default": null,
+        "type": [
+          "null",
+          "int"
+        ]
+      },
+      {
+        "name": "minute",
+        "default": null,
+        "type": [
+          "null",
+          "int"
+        ]
+      },
+      {
+        "name": "second",
+        "default": null,
+        "type": [
+          "null",
+          "int"
+        ]
+      },
+      {
+        "name": "millis",
+        "default": null,
+        "type": [
+          "null",
+          "int"
+        ]
+      }
+    ]
+  },
+  {
+    "namespace": "com.aliyun.dts.deliver.protocol.avro.generated",
+    "type": "record",
+    "name": "TimestampWithTimeZone",
+    "fields": [
+      {
+        "name": "value",
+        "type": "DateTime"
+      },
+      {
+        "name": "timezone",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "namespace": "com.aliyun.dts.deliver.protocol.avro.generated",
+    "type": "record",
+    "name": "BinaryGeometry",
+    "fields": [
+      {
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "name": "value",
+        "type": "bytes"
+      }
+    ]
+  },
+  {
+    "namespace": "com.aliyun.dts.deliver.protocol.avro.generated",
+    "type": "record",
+    "name": "TextGeometry",
+    "fields": [
+      {
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "name": "value",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "namespace": "com.aliyun.dts.deliver.protocol.avro.generated",
+    "type": "record",
+    "name": "BinaryObject",
+    "fields": [
+      {
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "name": "value",
+        "type": "bytes"
+      }
+    ]
+  },
+  {
+    "namespace": "com.aliyun.dts.deliver.protocol.avro.generated",
+    "type": "record",
+    "name": "TextObject",
+    "fields": [
+      {
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "name": "value",
+        "type": "string"
+      }
+    ]
+  },
+  {
+      "namespace": "com.aliyun.dts.deliver.protocol.avro.generated",
+      "type": "enum",
+      "name": "EmptyObject",
+      "symbols" : ["NULL", "NONE"]
+  },
+  {
+    "namespace": "com.aliyun.dts.deliver.protocol.avro.generated",
+    "type": "record",
+    "name": "Record",
+    "fields": [
+      {
+        "name": "version",
+        "type": "int",
+        "doc": "version infomation"
+      },
+      {
+        "name": "id",
+        "type": "long",
+        "doc": "unique id of this record in the whole stream"
+      },
+      {
+        "name": "sourceTimestamp",
+        "type": "long",
+        "doc": "record log timestamp"
+      },
+      {
+        "name": "sourcePosition",
+        "type": "string",
+        "doc": "record source location information"
+      },
+      {
+        "name": "safeSourcePosition",
+        "type": "string",
+        "default": "",
+        "doc": "safe record source location information, use to recovery."
+      },
+      {
+        "name": "sourceTxid",
+        "type": "string",
+        "default": "",
+        "doc": "record transation id"
+      },
+      {
+        "name": "source",
+        "doc": "source dataource",
+        "type": {
+          "namespace": "com.aliyun.dts.deliver.protocol.avro.generated",
+          "name": "Source",
+          "type": "record",
+          "fields": [
+            {
+              "name": "sourceType",
+              "type": {
+                "namespace": "com.aliyun.dts.deliver.protocol.avro.generated",
+                "name": "SourceType",
+                "type": "enum",
+                "symbols": [
+                  "MySQL",
+                  "Oracle",
+                  "SQLServer",
+                  "PostgreSQL",
+                  "MongoDB",
+                  "Redis",
+                  "DB2",
+                  "PPAS",
+                  "DRDS",
+                  "HBASE",
+                  "HDFS",
+                  "FILE",
+                  "TIDB",
+                  "OTHER"
+                ]
+              }
+            },
+            {
+              "name": "version",
+              "type": "string",
+              "doc": "source datasource version information"
+            }
+          ]
+        }
+      },
+      {
+        "namespace": "com.aliyun.dts.deliver.protocol.avro.generated",
+        "name": "operation",
+        "type": {
+          "name": "Operation",
+          "type": "enum",
+          "symbols": [
+            "INSERT",
+            "UPDATE",
+            "DELETE",
+            "DDL",
+            "BEGIN",
+            "COMMIT",
+            "ROLLBACK",
+            "ABORT",
+            "HEARTBEAT",
+            "CHECKPOINT",
+            "COMMAND",
+            "FILL",
+            "FINISH",
+            "CONTROL",
+            "RDB",
+            "NOOP",
+            "INIT"
+          ]
+        }
+      },
+      {
+        "name": "objectName",
+        "default": null,
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      {
+        "name": "processTimestamps",
+        "default": null,
+        "type": [
+          "null",
+          {
+            "type": "array",
+            "items": "long"
+          }
+        ],
+        "doc": "time when this record is processed along the stream dataflow"
+      },
+      {
+        "name": "tags",
+        "default": {},
+        "type": {
+          "type": "map",
+          "values": "string"
+        },
+        "doc": "tags to identify properties of this record"
+      },
+      {
+        "name": "fields",
+        "default": null,
+        "type": [
+          "null",
+          "string",
+          {
+            "type": "array",
+            "items": "com.aliyun.dts.deliver.protocol.avro.generated.Field"
+          }
+        ]
+      },
+      {
+        "name": "beforeImages",
+        "default": null,
+        "type": [
+          "null",
+          "string",
+          {
+            "type": "array",
+            "items": [
+              "null",
+              "com.aliyun.dts.deliver.protocol.avro.generated.Integer",
+              "com.aliyun.dts.deliver.protocol.avro.generated.Character",
+              "com.aliyun.dts.deliver.protocol.avro.generated.Decimal",
+              "com.aliyun.dts.deliver.protocol.avro.generated.Float",
+              "com.aliyun.dts.deliver.protocol.avro.generated.Timestamp",
+              "com.aliyun.dts.deliver.protocol.avro.generated.DateTime",
+              "com.aliyun.dts.deliver.protocol.avro.generated.TimestampWithTimeZone",
+              "com.aliyun.dts.deliver.protocol.avro.generated.BinaryGeometry",
+              "com.aliyun.dts.deliver.protocol.avro.generated.TextGeometry",
+              "com.aliyun.dts.deliver.protocol.avro.generated.BinaryObject",
+              "com.aliyun.dts.deliver.protocol.avro.generated.TextObject",
+              "com.aliyun.dts.deliver.protocol.avro.generated.EmptyObject"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "afterImages",
+        "default": null,
+        "type": [
+          "null",
+          "string",
+          {
+            "type": "array",
+            "items": [
+              "null",
+              "com.aliyun.dts.deliver.protocol.avro.generated.Integer",
+              "com.aliyun.dts.deliver.protocol.avro.generated.Character",
+              "com.aliyun.dts.deliver.protocol.avro.generated.Decimal",
+              "com.aliyun.dts.deliver.protocol.avro.generated.Float",
+              "com.aliyun.dts.deliver.protocol.avro.generated.Timestamp",
+              "com.aliyun.dts.deliver.protocol.avro.generated.DateTime",
+              "com.aliyun.dts.deliver.protocol.avro.generated.TimestampWithTimeZone",
+              "com.aliyun.dts.deliver.protocol.avro.generated.BinaryGeometry",
+              "com.aliyun.dts.deliver.protocol.avro.generated.TextGeometry",
+              "com.aliyun.dts.deliver.protocol.avro.generated.BinaryObject",
+              "com.aliyun.dts.deliver.protocol.avro.generated.TextObject",
+              "com.aliyun.dts.deliver.protocol.avro.generated.EmptyObject"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "bornTimestamp",
+        "default": 0,
+        "type": "long",
+        "doc": "the timestamp in unit of millisecond that record is born in source"
+      }
+    ]
+  }
+]
