@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration strict="true" status="info" monitorInterval="30">
+    <Properties>
+        <Property name="errorlogFile">./error.log</Property>
+        <Property name="commonlogFile">./dts-deliver.log</Property>
+        <Property name="patternLayout">%d{yyyy-MM-dd HH:mm:ss} [%t] %p %c{1}: %L - %m%n</Property>
+        <Property name="metricslogFile">./logs/index.log</Property>
+    </Properties>
+    <Appenders>
+        <Appender name="myconsole" type="console">
+            <Layout type="PatternLayout" pattern="${patternLayout}" />
+            <Filters>
+                <Filter type="ThresholdFilter" level="info" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+        </Appender>
+        <Appender name="errorlog" type="RollingRandomAccessFile" fileName="${errorlogFile}" filePattern="${errorlogFile}.%i" append="true">
+            <Layout type="PatternLayout" pattern="${patternLayout}" />
+            <Filters>
+                <Filter type="ThresholdFilter" level="error" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="100 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="50" fileIndex="min" />
+        </Appender>
+        <Appender name="commonlog" type="RollingRandomAccessFile" fileName="${commonlogFile}" filePattern="${commonlogFile}.%i" append="true">
+            <Layout type="PatternLayout" pattern="${patternLayout}" />
+            <Filters>
+                <Filter type="ThresholdFilter" level="info" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="100 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="50" fileIndex="min" />
+        </Appender>
+        <Appender name="metricslog" type="RollingRandomAccessFile" fileName="${metricslogFile}" filePattern="${metricslogFile}.%i" append="true">
+            <Layout type="PatternLayout" pattern="%m%n" />
+            <Filters>
+                <Filter type="ThresholdFilter" level="info" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="200 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="5" fileIndex="min" />
+        </Appender>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.aliyun.oss" level="error" additivity="false">
+            <AppenderRef ref="errorlog" />
+            <AppenderRef ref="commonlog" />
+        </Logger>
+        <Logger name="org.reflections" level="error" additivity="false">
+            <AppenderRef ref="errorlog" />
+        </Logger>
+        <Logger name="com.aliyun.dts" additivity="false">
+            <AppenderRef ref="errorlog" />
+            <AppenderRef ref="commonlog" />
+        </Logger>
+        <Logger name="log.metrics" additivity="false">
+            <AppenderRef ref="metricslog" />
+        </Logger>
+        <Root level="debug">
+            <AppenderRef ref="myconsole" />
+            <AppenderRef ref="errorlog" />
+            <AppenderRef ref="commonlog" />
+        </Root>
+    </Loggers>
+</Configuration>

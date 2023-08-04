@@ -1,0 +1,94 @@
+{
+"opType": "CREATE TABLE",
+"sdbType": "mysql",
+"sdbVersion": "5.6",
+"dbName": "dtstest",
+"schemaName": "dtstest",
+"tableName": "users",
+"columns": [
+{
+"name": "id",
+"type": {
+"datatype": "int",
+"precision": 11
+},
+"options": {
+"nullable": false,
+"autoincrement": true
+}
+},
+{
+"name": "nickname",
+"type": {
+"datatype": "varchar",
+"precision": 255
+},
+"options": {
+"nullable": false
+}
+},
+{
+"name": "deleted_at",
+"type": {
+"datatype": "timestamp",
+"fractional": 0
+},
+"options": {
+"nullable": true
+}
+},
+{
+"name": "created_at",
+"type": {
+"datatype": "timestamp",
+"fractional": 0
+},
+"options": {
+"nullable": false,
+"default": "CURRENT_TIMESTAMP"
+}
+},
+{
+"name": "updated_at",
+"type": {
+"datatype": "timestamp",
+"fractional": 0
+},
+"options": {
+"nullable": true
+}
+}
+],
+"primaryKey": {
+"columns": [
+{
+"column": "id"
+}
+],
+"name": "pk1"
+},
+"uniqueKeys": [
+{
+"columns": [
+{
+"column": "nickname"
+}
+],
+"name": "unq_nick"
+}
+],
+"indexes": [
+{
+"columns": [
+{
+"column": "address"
+}
+],
+"name": "ind_dd"
+}
+],
+"options": {
+"comment": "All system users",
+"engine": "Innodb"
+}
+}
