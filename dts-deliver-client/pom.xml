@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>dts-deliver-sdk</artifactId>
+        <groupId>com.aliyun.dts.deliver</groupId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>dts-deliver-client</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.aliyun.dts.deliver</groupId>
+            <artifactId>dts-deliver-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun.dts.deliver</groupId>
+            <artifactId>dts-deliver-connector-dstore</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun.dts.deliver</groupId>
+            <artifactId>dts-deliver-filter</artifactId>
+        </dependency>
+    </dependencies>
+</project>

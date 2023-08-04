@@ -1,0 +1,25 @@
+{
+  "opType": "ALTER TABLE",
+  "sdbType": "mysql",
+  "sdbVersion": "5.6",
+  "dbName": "dtstest",
+  "schemaName": "dtstest",
+  "tableName": "users",
+  "itemClauses" :[
+    {
+      "clauseType": "ADD COLUMN",
+      "column" :
+      {
+        "name": "weight",
+        "type": {
+          "precision": "decimal",
+          "digits": 4,
+          "scale": 2
+        },
+        "options": {
+          "nullable": true
+        }
+      }
+    }
+  ]
+}
