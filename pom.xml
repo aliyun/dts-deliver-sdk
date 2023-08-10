@@ -43,7 +43,7 @@
     </developers>
 
     <properties>
-        <revision>1.0.1-SNAPSHOT</revision>
+        <revision>1.0.0</revision>
         <version.log4j>2.17.1</version.log4j>
         <version.slf4j.api>1.7.25</version.slf4j.api>
         <version.togo>1.0.0.45</version.togo>
