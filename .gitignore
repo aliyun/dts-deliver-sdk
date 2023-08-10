@@ -10,6 +10,9 @@ dts-deliver.log
 */.DS_Store
 .DS_Store
 dts-deliver-common/src/test/java/com/aliyun/dts/deliver/commons/openapi/DtsOpenApiTest.java
+.flattened-pom.xml
+*/.flattened-pom.xml
+*/*/.flattened-pom.xml
 
 
 
